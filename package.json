@@ -1,0 +1,50 @@
+{
+  "name": "shop",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://cktufftask.github.io/demo-shop-test/",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@material-ui/core": "^4.9.3",
+    "axios": "^0.19.2",
+    "history": "^4.10.1",
+    "rc-slider": "^9.2.1",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap-modal": "^4.2.0",
+    "react-dom": "^16.8.4",
+    "react-getscreen": "^1.1.3",
+    "react-range": "^1.5.3",
+    "react-rangeslider": "^2.2.0",
+    "react-redux": "^7.0.1",
+    "react-responsive": "^8.0.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "thunk": "0.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "preload":"npm run build",
+    "deploy":"gh-pages -d build"
+
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
