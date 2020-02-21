@@ -1,15 +1,15 @@
 {
-  "main.css": "/cktufftask/demo-shop-test/static/css/main.2b282203.chunk.css",
-  "main.js": "/cktufftask/demo-shop-test/static/js/main.be4eea11.chunk.js",
-  "main.js.map": "/cktufftask/demo-shop-test/static/js/main.be4eea11.chunk.js.map",
-  "runtime~main.js": "/cktufftask/demo-shop-test/static/js/runtime~main.74c7e406.js",
-  "runtime~main.js.map": "/cktufftask/demo-shop-test/static/js/runtime~main.74c7e406.js.map",
-  "static/css/2.921641cb.chunk.css": "/cktufftask/demo-shop-test/static/css/2.921641cb.chunk.css",
-  "static/js/2.04ff8a47.chunk.js": "/cktufftask/demo-shop-test/static/js/2.04ff8a47.chunk.js",
-  "static/js/2.04ff8a47.chunk.js.map": "/cktufftask/demo-shop-test/static/js/2.04ff8a47.chunk.js.map",
-  "index.html": "/cktufftask/demo-shop-test/index.html",
-  "precache-manifest.4befc9ac2da8b4aeffa94e5386d4cdf5.js": "/cktufftask/demo-shop-test/precache-manifest.4befc9ac2da8b4aeffa94e5386d4cdf5.js",
-  "service-worker.js": "/cktufftask/demo-shop-test/service-worker.js",
-  "static/css/2.921641cb.chunk.css.map": "/cktufftask/demo-shop-test/static/css/2.921641cb.chunk.css.map",
-  "static/css/main.2b282203.chunk.css.map": "/cktufftask/demo-shop-test/static/css/main.2b282203.chunk.css.map"
+  "main.css": "/demo-shop-test/static/css/main.2b282203.chunk.css",
+  "main.js": "/demo-shop-test/static/js/main.be4eea11.chunk.js",
+  "main.js.map": "/demo-shop-test/static/js/main.be4eea11.chunk.js.map",
+  "runtime~main.js": "/demo-shop-test/static/js/runtime~main.c0562208.js",
+  "runtime~main.js.map": "/demo-shop-test/static/js/runtime~main.c0562208.js.map",
+  "static/css/2.921641cb.chunk.css": "/demo-shop-test/static/css/2.921641cb.chunk.css",
+  "static/js/2.04ff8a47.chunk.js": "/demo-shop-test/static/js/2.04ff8a47.chunk.js",
+  "static/js/2.04ff8a47.chunk.js.map": "/demo-shop-test/static/js/2.04ff8a47.chunk.js.map",
+  "index.html": "/demo-shop-test/index.html",
+  "precache-manifest.69c050ac638808db5353676e88f571de.js": "/demo-shop-test/precache-manifest.69c050ac638808db5353676e88f571de.js",
+  "service-worker.js": "/demo-shop-test/service-worker.js",
+  "static/css/2.921641cb.chunk.css.map": "/demo-shop-test/static/css/2.921641cb.chunk.css.map",
+  "static/css/main.2b282203.chunk.css.map": "/demo-shop-test/static/css/main.2b282203.chunk.css.map"
 }
