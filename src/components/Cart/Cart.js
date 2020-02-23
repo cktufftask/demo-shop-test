@@ -7,19 +7,19 @@ class Cart extends Component {
     constructor(props) {
         super(props)
         this.state = { totalDisocunt: 0 }
-       
+
     }
-    componentDidMount(){
+    componentDidMount() {
         this.getTotalDiscount();
     }
-      
-    getTotalDiscount= ()=>{
-        let sum=this.state.totalDisocunt;
-        this.props.items.map( item => {
-             sum=  sum + (this.findPrice(item.price, item.discount) - item.price);
-            }) 
-      this.setState({totalDisocunt:sum});   
-      console.log(this.state.totalDisocunt,"totalDiscount");
+
+    getTotalDiscount = () => {
+        let sum = this.state.totalDisocunt;
+        this.props.items.map(item => {
+            sum = sum + (this.findPrice(item.price, item.discount) - item.price);
+        })
+        this.setState({ totalDisocunt: sum });
+        console.log(this.state.totalDisocunt, "totalDiscount");
 
     }
     handleRemove = id => {
@@ -102,38 +102,40 @@ class Cart extends Component {
 
         let totalItems = this.props.total;
         //console.log(this.props, "this.props", totalItems, "totalItems");
-       // let sum=0;
+        // let sum=0;
         return (
             <div className="container di">
-                <div className="col-md-8">
-                    <div className="cart">
-                        <h5>Your Cart:</h5>
-                        <ul className="collection">
-                            {addedItems}
+                <div className="row">
+                    <div className="col-xl">
+                        <div className="cart">
+                            <h5>Your Cart:</h5>
+                            <ul className="collection">
+                                {addedItems}
 
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-sm" style={{ paddingTop: '50px' }}>
+                        <div> <strong>Price Details</strong> </div>
+                        <ul className={"col ml-0"}>
+                            {this.props.items.map((item) => {
+                                return (<li
+                                    className={
+                                        "d-flex justify-content-lg-between"
+                                    }><div>{item.name} ( {item.quantity} )</div> <div>{item.price * item.quantity}</div>
+
+                                </li>)
+                            })
+                            }
+                            <li className={
+                                "d-flex justify-content-lg-between"
+                            }><div>{"Total Discount"}</div><div>
+                                    {this.state.totalDisocunt}</div></li>
+                            <li className={
+                                "d-flex justify-content-lg-between"
+                            }> <div>{"Total"}</div><div>{totalItems}</div> </li>
                         </ul>
                     </div>
-                </div>
-                <div className="col-md-4" style={{ paddingTop: '50px' }}>
-                    <div> <strong>Price Details</strong> </div>
-                    <ul className={"col ml-0"}>
-                        {this.props.items.map((item) => {
-                            return (<li
-                                className={
-                                    "d-flex justify-content-lg-between"
-                                }><div>{item.name} ( {item.quantity} )</div> <div>{item.price * item.quantity}</div>
-
-                            </li>)
-                        })
-                        }
-                        <li className={
-                            "d-flex justify-content-lg-between"
-                        }><div>{"Total Discount"}</div><div>
-                            {this.state.totalDisocunt}</div></li>
-                        <li className={
-                            "d-flex justify-content-lg-between"
-                        }> <div>{"Total"}</div><div>{totalItems}</div> </li>
-                    </ul>
                 </div>
             </div>
 
