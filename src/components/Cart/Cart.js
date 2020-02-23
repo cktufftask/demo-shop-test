@@ -7,13 +7,28 @@ class Cart extends Component {
     constructor(props) {
         super(props)
         this.state = { totalDisocunt: 0 }
+       
     }
+    componentDidMount(){
+        this.getTotalDiscount();
+    }
+      
+    getTotalDiscount= ()=>{
+        let sum=this.state.totalDisocunt;
+        this.props.items.map( item => {
+             sum=  sum + (this.findPrice(item.price, item.discount) - item.price);
+            }) 
+      this.setState({totalDisocunt:sum});   
+      console.log(this.state.totalDisocunt,"totalDiscount");
 
+    }
     handleRemove = id => {
         this.props.removeItem(id);
+        this.getTotalDiscount();
     };
     handleAddQuantity = (id) => {
         this.props.addQuantity(id);
+        this.getTotalDiscount();
 
     };
     handleSubtractQuantity = (id, quantity) => {
@@ -30,9 +45,7 @@ class Cart extends Component {
     }
 
     totalDiscount = (price, discount) => {
-        let sum = sum + (this.findPrice(price, discount) - price);
-        this.setState({ totalDisocunt: sum });
-
+        this.setState({ totalDisocunt: this.state.totalDisocunt + (this.findPrice(price, discount) - price) });
     }
 
 
@@ -65,13 +78,6 @@ class Cart extends Component {
                                     className={"btn btn-primary ml-3"}>+</button>
                             </p>
                         </li>
-                        {/* <li style={{display:'none'}}
-                            className={
-                                "col-2 list-group-item d-flex justify-content-center align-items-center"
-                            }
-                        >
-                            {item.price * item.quantity}
-                        </li> */}
                         <li
                             className={
                                 "col-4 list-group-item d-flex justify-content-center align-items-center"
@@ -95,8 +101,8 @@ class Cart extends Component {
             );
 
         let totalItems = this.props.total;
-        console.log(this.props, "this.props", totalItems, "totalItems");
-
+        //console.log(this.props, "this.props", totalItems, "totalItems");
+       // let sum=0;
         return (
             <div className="container di">
                 <div className="col-md-8">
@@ -112,7 +118,6 @@ class Cart extends Component {
                     <div> <strong>Price Details</strong> </div>
                     <ul className={"col ml-0"}>
                         {this.props.items.map((item) => {
-                            // this.totalDiscount(item.price, item.discount);
                             return (<li
                                 className={
                                     "d-flex justify-content-lg-between"
@@ -123,7 +128,8 @@ class Cart extends Component {
                         }
                         <li className={
                             "d-flex justify-content-lg-between"
-                        }><div>{"Total Discount"}</div><div>{this.state.totalDisocunt}</div></li>
+                        }><div>{"Total Discount"}</div><div>
+                            {this.state.totalDisocunt}</div></li>
                         <li className={
                             "d-flex justify-content-lg-between"
                         }> <div>{"Total"}</div><div>{totalItems}</div> </li>

@@ -2,7 +2,7 @@ import React,{useState} from "react";
 const SortBy = (props) => {
     const [active,setActive]=useState('');
     return <>
-        <div className="row sort-by">
+         <div className="row sort-by">
          <div className="title">Sort By</div>
             <ul>
                 <li  key={1}  className={active === 1 ? 'active' : ''}

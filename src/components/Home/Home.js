@@ -4,7 +4,7 @@ import { addToCart } from "../../action/cartActions";
 import Filter from "../filter/Filter";
 import SortBy from "../filter/SortBy"
 import List from "../List/List";
-
+import Popup from '../popup/Popup'
 
 
 class Home extends Component {
@@ -12,9 +12,18 @@ class Home extends Component {
         super(props)
         this.state = {
             'items': this.props.items,
-            'active': ''
+            'active': '',
+            showPopup: false,
+            moduelname:''
         }
     }
+    togglePopup(module) {
+        this.setState({
+          showPopup: !this.state.showPopup,
+          moduelname:module
+        });
+        //console.log("___________________");
+      }
 
     handleClick = id => {
         this.props.addToCart(id);
@@ -38,19 +47,33 @@ class Home extends Component {
     }
     render() {
         return (<>
+            <div className={'row filterAndSortMenu'}>
+                    <button type="button" class="btnx btn-primary btn-block" onClick={this.togglePopup.bind(this,"filter")}>Filter</button>
+                    <button type="button" class="btnx btn-primary btn-block" onClick={this.togglePopup.bind(this,"sortby")}>SortBy</button>
+            </div>
             <div className="col-md-2 side-bar">
                 <Filter />
             </div>
             <div className="col-md-10">
                 <div className={"container"}>
-                    <div className={"row"}>
+                    <div className={"row sortinByItem"}>
+
                         <SortBy sortItemBy={this.sortItemBy} {...this.props} />
                     </div>
 
                     <div className={"row"}>
                         <List {...this.props} />
                     </div>
-                </div></div></>);
+                </div></div>
+                {this.state.showPopup ? 
+          <Popup
+            text='Close Me'
+            closePopup={this.togglePopup.bind(this)}
+            Component={this.state.moduelname==="filter"?<Filter />:<SortBy sortItemBy={this.sortItemBy} {...this.props}/>}
+          />
+          : null
+        }
+                </>);
     }
 }
 const mapStateToProps = state => {

@@ -7,8 +7,7 @@ const initState = {
 };
 
 const cartReducer = (state = initState, action) => {
-    console.log(state);
-    switch (action.type) {
+     switch (action.type) {
         //Home
         case "ADD_TO_CART": {
             //console.log(addedItem)

@@ -34,14 +34,14 @@ class Filter extends Component {
 
     render() {
        return (
+           <>
             <div className='slider custom-labels'>
                 <Slider handleChange={this.handleChange} />
                 <div className={"btn-center"}> 
                     <button type="button" class="btn btn-success" onClick={()=>{this.props.FilterPrice(this.state.value)}}>Apply</button>
-
-                </div>
-
+                 </div>
             </div>
+           </> 
         )
     }
 
