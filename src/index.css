@@ -261,6 +261,10 @@ a{
       margin-right: 0px;
       margin-left: 0px;
   }
+  .listing-data{
+    margin-right: -35px!important;
+    margin-left: -35px!important;
+  }
 
   .card {
     width: 144px;

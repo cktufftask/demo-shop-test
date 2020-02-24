@@ -61,7 +61,7 @@ class Home extends Component {
                         <SortBy sortItemBy={this.sortItemBy} {...this.props} />
                     </div>
 
-                    <div className={"row"}>
+                    <div className={"row listing-data"}>
                         <List {...this.props} />
                     </div>
                 </div></div>
