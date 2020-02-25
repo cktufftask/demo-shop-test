@@ -11,7 +11,7 @@ const Header = (props) => {
         <Navbar className="navbar navbar-dark bg-primary justify-content-between">
             <div className="col-6">
                 <Link to={'/'}>
-                    {"SHOPPING CART"}
+                    <img src="/images/icon.png"  height={'50px'}/>
                 </Link>
             </div>
             <div className="col-6 text-right left-head" >

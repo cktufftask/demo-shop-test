@@ -20,6 +20,12 @@ class App extends Component {
         }
 
     }
+    componentDidMount(){
+        this.state = {
+            'items': this.props.items,
+            'active': ''
+        }
+    }
 
     render() {
         return (
