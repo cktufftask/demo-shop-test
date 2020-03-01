@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from "react-bootstrap";
 
+ 
 
 const List = (props) => {
     const findPrice = (price, discount) => {
@@ -34,7 +35,7 @@ const List = (props) => {
                                 >Add to cart
         </Button>
                             ) : (
-                                    <Button className="btn" variant="info" onClick={() => props.addToCart(item.id)}>
+                                    <Button className="btn" variant="info" onClick={() =>{ props.addToCart(item.id);props.notify()}}>
                                         Add to cart
         </Button>
                                 )}

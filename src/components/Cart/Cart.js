@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeItem, addQuantity, subtractQuantity } from "../../action/cartActions";
+import { removeItem, addQuantity, subtractQuantity, totalQuantity,totalDiscount } from "../../action/cartActions";
 import "./Cart.css";
 
 class Cart extends Component {
@@ -130,7 +130,7 @@ class Cart extends Component {
                             <li className={
                                 "d-flex justify-content-lg-between"
                             }><div>{"Total Discount"}</div><div>
-                                    {this.state.totalDisocunt}</div></li>
+                                    {this.props.discount}</div></li>
                             <li className={
                                 "d-flex justify-content-lg-between"
                             }> <div>{"Total"}</div><div>{totalItems}</div> </li>
@@ -150,7 +150,9 @@ const mapStateToProps = state => {
         items: state.cart.addedItems,
         addedItems: state.cart.addedItems,
         total: state.cart.total,
-        totalItem: state.cart.totalItem
+        totalItem: state.cart.totalItem,
+        totalitemscount:state.cart.totalitemscount,
+        discount:state.cart.discount
     };
 };
 const mapDispatchToProps = dispatch => {
@@ -163,6 +165,12 @@ const mapDispatchToProps = dispatch => {
         },
         subtractQuantity: id => {
             dispatch(subtractQuantity(id));
+        },
+        totalDiscount:id=>{
+            dispatch(totalDiscount(id));
+        },
+        totalQuantity:id=>{
+            dispatch(totalQuantity(id));
         }
     };
 };

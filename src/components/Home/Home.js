@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../action/cartActions";
+
 import Filter from "../filter/Filter";
 import SortBy from "../filter/SortBy"
 import List from "../List/List";
 import Popup from '../popup/Popup'
-
+import { toast ,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Home extends Component {
     constructor(props) {
@@ -30,7 +32,8 @@ class Home extends Component {
 
     };
 
-
+    notify = () => toast("Total Items in Cart is "+ this.props.totalitemscount);
+   
     sortItemBy = (field, items, flag) => {
         let sortItems = items.sort((a, b) => {
             if (flag) {
@@ -62,7 +65,8 @@ class Home extends Component {
                     </div>
 
                     <div className={"row listing-data"}>
-                        <List {...this.props} />
+                      {this.props &&  <List {...this.props} notify={this.notify} />}
+                        <ToastContainer />
                     </div>
                 </div></div>
                 {this.state.showPopup ? 
@@ -79,6 +83,8 @@ class Home extends Component {
 const mapStateToProps = state => {
     return {
         items: state.seachReducer.items,
+        totalitemscount:state.cart.totalitemscount
+        
 
     };
 };
